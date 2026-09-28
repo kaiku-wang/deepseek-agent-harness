@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deepseek-agent-harness"
+version = "1.0.0"
+description = "A modular coding-agent harness for DeepSeek Chat Completions"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["openai>=1.99,<3", "python-dotenv>=1.0,<2", "PyYAML>=6.0,<7"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[project.scripts]
+deepseek-harness = "harness.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["harness*"]
